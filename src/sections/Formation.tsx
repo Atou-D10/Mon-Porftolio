@@ -44,7 +44,7 @@ const Formation = () => {
     >
       <div className="flex flex-col items-center mb-12">
         <GiGraduateCap size={75} className="mb-4" />
-        <h2 className="text-4xl font-extrabold text-center text-cyan-400">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-cyan-400">
           Formation académique & certifications
         </h2>
       </div>
@@ -70,11 +70,13 @@ const Formation = () => {
             >
               {/* Carte à gauche ou à droite */}
               <div
-                className={`w-5/12 bg-gray-900 border border-cyan-500 rounded-xl p-8 shadow-md hover:shadow-cyan-600 transition-transform transform hover:scale-[1.03] cursor-default ${
+                className={`w-full sm:w-5/12 bg-gray-900 border border-cyan-500 rounded-xl p-6 sm:p-8 shadow-md hover:shadow-cyan-600 transition-transform transform hover:scale-[1.03] cursor-default ${
                   isLeft ? "text-left" : "text-right"
                 }`}
               >
-                <h3 className="text-2xl font-semibold text-sky-400 mb-1">{title}</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-sky-400 mb-1">
+                  {title}
+                </h3>
                 <p className="italic text-gray-300 mb-1">{institution}</p>
                 <span className="text-sm text-gray-400">{date}</span>
                 {status && (
