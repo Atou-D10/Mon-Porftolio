@@ -1,0 +1,17 @@
+.animated-bg-dark {
+  background: linear-gradient(270deg, #000000, #1f1f1f, #000000);
+  background-size: 600% 600%;
+  animation: darkGradientShift 20s ease infinite;
+}
+
+@keyframes darkGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
