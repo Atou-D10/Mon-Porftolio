@@ -17,12 +17,12 @@ const services = [
   {
     title: "Applications desktop",
     description: "Conception d’applications Windows multiplateformes en Java et C#.",
-    icon: <SiLinux size={28} />,
+    icon: <FaDesktop size={28} />,
   },
   {
     title: "Administration système Linux",
     description: "Gestion des serveurs, déploiement, scripts shell et surveillance système.",
-    icon: <FaCogs size={28} />,
+    icon: <SiLinux size={28} />,
   },
   {
     title: "Bases de données relationnelles",
