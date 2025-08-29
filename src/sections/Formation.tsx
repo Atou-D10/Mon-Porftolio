@@ -29,11 +29,6 @@ const formations: FormationEntry[] = [
     institution: "Force N",
     date: "Mars 2025",
   },
-  {
-    title: "Certificat en Développement Frontend ",
-    institution: "Force N",
-    date: "En cours",
-  },
 ];
 
 const Formation = () => {
