@@ -10,17 +10,17 @@ type FormationEntry = {
 
 const formations: FormationEntry[] = [
   {
-    title: "Licence Informatique Appliquée à la Gestion des Entreprises",
-    institution: "Institut Supérieur d’Informatique (ISI)",
-    date: "2021 – 2024",
-  },
-  {
     title: "Licence Informatique Développement d’Application",
     institution: "Université Numérique Cheikh Hamidou Kane (UNCHK)",
     date: "2022 – 2025",
   },
   {
-    title: "Anglais",
+    title: "Licence Informatique Appliquée à la Gestion des Entreprises",
+    institution: "Institut Supérieur d’Informatique (ISI)",
+    date: "2021 – 2024",
+  },
+  {
+    title: "Certificat en Developpement Front-End",
     institution: "Institut Professionnel de Formation",
     date: "Février 2025 – Mai 2025",
   },
