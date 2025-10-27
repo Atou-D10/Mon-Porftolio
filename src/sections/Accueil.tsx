@@ -24,7 +24,7 @@ const Accueil = () => {
         </p>
 
         <motion.a
-          href="/cv.pdf"
+          href="/CV_ATOU_DIAGNE.pdf"
           download
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -22,12 +22,12 @@ const formations: FormationEntry[] = [
   {
     title: "Certificat en Developpement Front-End",
     institution: "Institut Professionnel de Formation",
-    date: "Février 2025 – Mai 2025",
+    date: "Mai 2025 – Septembre 2025",
   },
   {
     title: "Certificat en Informatique et Internet",
     institution: "Force N",
-    date: "Mars 2025",
+    date: "Fevrier 2025 - Mars 2025",
   },
 ];
 
