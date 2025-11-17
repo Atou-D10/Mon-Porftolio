@@ -10,6 +10,11 @@ type FormationEntry = {
 
 const formations: FormationEntry[] = [
   {
+    title: "Master Intelligence Artificielle et Data Science",
+    institution: "Swiss Umef University",
+    date: "2025 – Present",
+  },
+  {
     title: "Licence Informatique Développement d’Application",
     institution: "Université Numérique Cheikh Hamidou Kane (UNCHK)",
     date: "2022 – 2025",
