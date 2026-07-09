@@ -1,9 +1,37 @@
-import { FaCode, FaCogs, FaDesktop, FaDatabase, FaFileExcel, FaTabletAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { SiLinux } from "react-icons/si";
+import {
+  FaCode,
+  FaCogs,
+  FaDesktop,
+  FaDatabase,
+  FaFileExcel,
+  FaChartBar,
+  FaBrain,
+  FaChartLine,
+  FaChartPie,
+} from "react-icons/fa";import { motion } from "framer-motion";
 
 
 const services = [
+    {
+    title: "Analyse et traitement de données avec Python",
+    description: "Récupération de données via API, nettoyage avec Pandas, stockage en base et visualisation avec Matplotlib.",
+    icon: <FaChartBar size={28} />,
+  },
+  {
+    title: "Machine Learning",
+    description: "Conception de modèles prédictifs avec Scikit-learn : régression, classification, clustering.",
+    icon: <FaBrain size={28} />,
+  },
+  {
+    title: "Data Analyst / Reporting",
+    description: "Exploration de données, requêtes SQL avancées et création de tableaux de bord.",
+    icon: <FaChartLine size={28} />,
+  },
+  {
+    title: "Visualisation de données",
+    description: "Création de graphiques clairs et interactifs avec Matplotlib, Seaborn ou Power BI.",
+    icon: <FaChartPie size={28} />,
+  },
   {
     title: "Développement web full-stack",
     description: "Création d’applications performantes avec React, Laravel, Angular…",
@@ -20,25 +48,16 @@ const services = [
     icon: <FaDesktop size={28} />,
   },
   {
-    title: "Administration système Linux",
-    description: "Gestion des serveurs, déploiement, scripts shell et surveillance système.",
-    icon: <SiLinux size={28} />,
-  },
-  {
     title: "Bases de données relationnelles",
     description: "Intégration et modélisation avec MySQL, PostgreSQL, SQL Server.",
     icon: <FaDatabase size={28} />,
-  },
-  {
-    title: "UI responsive",
-    description: "Interfaces modernes et adaptatives avec Tailwind CSS et Bootstrap.",
-    icon: <FaTabletAlt size={28} />,
   },
   {
     title: "Traitement avancé de données Excel",
     description: "Automatisation, analyse et export avec Excel (niveau avancé).",
     icon: <FaFileExcel size={28} />,
   },
+
 ];
 
 const Services = () => {

@@ -18,9 +18,14 @@ const Accueil = () => {
           <span className="text-cyan-400">Atou Diagne</span>
         </h1>
 
+          <h2 className="text-xl md:text-2xl text-cyan-300 font-medium mb-6">
+             Data Analyst & Développeur Full-Stack
+          </h2>
+          
         <p className="text-lg md:text-xl text-gray-300 mb-8">
-          Développeur full-stack passionné, avec une expertise en React, Laravel et Angular. 
-          Je crée des applications web innovantes, alliant performance, modernité et expérience utilisateur soignée.
+          Spécialisé en Data (analyse, Machine Learning, visualisation) avec une solide expertise
+          en développement web full-stack (React, Laravel, Angular).
+          Je transforme la donnée en solutions concrètes et en applications performantes.
         </p>
 
         <motion.a

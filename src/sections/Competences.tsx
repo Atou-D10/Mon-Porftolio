@@ -12,17 +12,38 @@ import {
   FaBootstrap,
   FaGitAlt,
   FaDatabase,
+  FaChartPie 
 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiSharp,SiC } from "react-icons/si";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiSharp,
+  SiC,
+  SiPandas,
+  SiNumpy,
+  SiScikitlearn,
+  SiPostgresql,
+  SiMysql
+} from "react-icons/si";
 
 const skills = [
+  // Data / ML 
+  { name: "Python", icon: <FaPython size={40} className="text-yellow-300" /> },
+  { name: "Pandas", icon: <SiPandas size={40} className="text-violet-400" /> },
+  { name: "NumPy", icon: <SiNumpy size={40} className="text-blue-400" /> },
+  { name: "Scikit-learn", icon: <SiScikitlearn size={40} className="text-orange-400" /> },
+  { name: "SQL", icon: <FaDatabase size={40} className="text-green-400" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql size={40} className="text-sky-400" /> },
+  { name: "MySQL", icon: <SiMysql size={40} className="text-blue-300" /> },
+  { name: "Power BI", icon: <FaChartPie  size={40} className="text-yellow-400" /> },
+
+  // Web / dev
   { name: "React", icon: <FaReact size={40} className="text-cyan-400" /> },
   { name: "Laravel", icon: <FaLaravel size={40} className="text-red-500" /> },
   { name: "Angular", icon: <FaAngular size={40} className="text-red-600" /> },
   { name: "JavaScript", icon: <FaJs size={40} className="text-yellow-400" /> },
   { name: "TypeScript", icon: <SiTypescript size={40} className="text-blue-400" /> },
   { name: "PHP", icon: <FaPhp size={40} className="text-indigo-300" /> },
-  { name: "Python", icon: <FaPython size={40} className="text-yellow-300" /> },
   { name: "Java", icon: <FaJava size={40} className="text-orange-500" /> },
   { name: "C#", icon: <SiSharp size={40} className="text-purple-400" /> },
   { name: "C", icon: <SiC size={40} className="text-blue-300" /> },
@@ -30,7 +51,6 @@ const skills = [
   { name: "CSS3", icon: <FaCss3Alt size={40} className="text-blue-500" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-cyan-300" /> },
   { name: "Bootstrap", icon: <FaBootstrap size={40} className="text-purple-500" /> },
-  { name: "Base de données", icon: <FaDatabase size={40} className="text-green-400" /> },
   { name: "Git", icon: <FaGitAlt size={40} className="text-orange-300" /> },
 ];
 

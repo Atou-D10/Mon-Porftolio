@@ -2,6 +2,20 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Analyse Météo Dakar",
+    image: "/images/meteo.jpg",
+    description: "Projet data : récupération de données météo via API, nettoyage avec pandas, stockage PostgreSQL et visualisations SQL.",
+    technologies: ["Python", "Pandas", "PostgreSQL"],
+    github: "https://github.com/Atou-D10/Projet_Meteo",
+  },
+  {
+    title: "NakaBus – Horaires bus Dakar",
+    image: "/images/nakabus.jpg",
+    description: "Horaires de bus en temps réel pour la banlieue dakaroise, avec un agent IA (Dify) intégré.",
+    technologies: ["React", "Cloudflare Workers", "Dify (Agent IA)"],
+    github: "https://nakabus.atoudiagne01.workers.dev/",
+  },
+  {
     title: "Gestion Agence Immobilière",
     image: "/images/agence.jpeg",
     description: "Application de gestion complète pour agences immobilières. (Projet en cours)",
@@ -36,6 +50,7 @@ const projects = [
     technologies: ["C#", "SQL Server"],
     github: "https://github.com/Atou-D10/Gestion_plainte_C-",
   },
+
 ];
 
 const Projets = () => {
