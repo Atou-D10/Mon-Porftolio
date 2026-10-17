@@ -104,7 +104,6 @@ export const fr: Content = {
     title: "Compétences",
     lead: "Des outils pour analyser la donnée, et d'autres pour construire les applications qui l'utilisent.",
     legend: { core: "Principales", secondary: "Complémentaires" },
-    countLabel: (count) => `${count} compétences`,
     groups: [
       {
         id: "data",
@@ -143,7 +142,7 @@ export const fr: Content = {
           {
             label: "Backend & API",
             core: ["Laravel", "Node.js", "Conception d'API REST"],
-            items: ["Laravel Breeze", "Laravel Sanctum", "JWT", "Swagger / OpenAPI"],
+            items: ["Laravel Breeze", "Laravel Sanctum"],
           },
           {
             label: "Applications desktop",

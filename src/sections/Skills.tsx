@@ -28,8 +28,6 @@ const groupStyles: Record<SkillGroup["id"], { dot: string; core: string; grid: s
   },
 };
 
-const countSkills = (group: SkillGroup) => group.blocks.reduce((n, b) => n + b.core.length + b.items.length, 0);
-
 export function Skills() {
   const { skills } = useContent();
 
@@ -54,7 +52,7 @@ export function Skills() {
 
         <div className="flex flex-col gap-6 md:gap-8">
           {skills.groups.map((group) => (
-            <SkillPanel key={group.id} group={group} legend={skills.legend} countLabel={skills.countLabel} />
+            <SkillPanel key={group.id} group={group} legend={skills.legend} />
           ))}
         </div>
       </div>
@@ -62,15 +60,7 @@ export function Skills() {
   );
 }
 
-function SkillPanel({
-  group,
-  legend,
-  countLabel,
-}: {
-  group: SkillGroup;
-  legend: { core: string; secondary: string };
-  countLabel: (n: number) => string;
-}) {
+function SkillPanel({ group, legend }: { group: SkillGroup; legend: { core: string; secondary: string } }) {
   const style = groupStyles[group.id];
   const titleId = `skills-${group.id}`;
 
@@ -86,7 +76,6 @@ function SkillPanel({
           {group.title}
         </h3>
         <p className="text-sm text-muted md:flex-1">{group.description}</p>
-        <p className="shrink-0 font-mono text-xs text-muted">{countLabel(countSkills(group))}</p>
       </header>
 
       {/* Sous-catégories : lignes de 1 px dessinées par l'espacement sur fond « line » */}

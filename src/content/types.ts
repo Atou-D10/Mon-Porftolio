@@ -91,7 +91,6 @@ export interface Content {
     title: string;
     lead: string;
     legend: { core: string; secondary: string };
-    countLabel: (count: number) => string;
     groups: SkillGroup[];
   };
   projects: {
