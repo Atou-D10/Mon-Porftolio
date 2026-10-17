@@ -32,7 +32,6 @@ const countSkills = (group: SkillGroup) => group.blocks.reduce((n, b) => n + b.c
 
 export function Skills() {
   const { skills } = useContent();
-  const total = skills.groups.reduce((n, g) => n + countSkills(g), 0);
 
   return (
     <section id="competences" aria-labelledby="skills-title" className="relative py-24 md:py-32">
@@ -40,9 +39,8 @@ export function Skills() {
         <SectionHeading index={2} title={skills.title} lead={skills.lead} id="skills-title" />
 
         {/* Légende : principales / complémentaires */}
-        <Reveal className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4 font-mono text-xs text-muted">
-          <p>{skills.countLabel(total)}</p>
-          <p aria-hidden="true" className="flex items-center gap-5">
+        <Reveal className="mb-8 border-b border-line pb-4 font-mono text-xs text-muted">
+          <p aria-hidden="true" className="flex flex-wrap items-center gap-5">
             <span className="inline-flex items-center gap-2">
               <span className="size-2.5 rounded-full bg-fg" />
               {skills.legend.core}
