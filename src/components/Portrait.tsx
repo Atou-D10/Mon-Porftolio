@@ -4,9 +4,10 @@ import { TiltCard } from "./TiltCard";
 
 /**
  * Carte portrait de la section À propos.
- * - Si `about.photo` est renseigné dans le contenu, la photo est affichée.
- * - Sinon, une illustration « fig. 01 » : deux courbes (data et fullstack)
- *   qui convergent, sur fond de monogramme. Elle se trace à l'apparition.
+ * - Si `about.photo` est renseigné dans le contenu, la photo est affichée (format 4:5).
+ * - Sinon, une illustration « fig. 01 » au format paysage : deux courbes (data et
+ *   fullstack) qui convergent, sur fond de monogramme. Elle se trace à l'apparition.
+ *   Sur grand écran, elle prend la hauteur du bloc de texte voisin (`h-full`).
  *
  * Pour ajouter une photo : déposer par ex. public/images/atou.webp (format 4:5,
  * environ 800×1000 px) puis renseigner `photo: { src: "/images/atou.webp", alt: "…" }`
@@ -17,8 +18,12 @@ export function Portrait() {
   const { portrait, photo } = about;
 
   return (
-    <TiltCard className="rounded-3xl">
-      <figure className="grain relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-elev">
+    <TiltCard className={photo ? "rounded-3xl" : "h-full rounded-3xl"}>
+      <figure
+        className={`grain relative overflow-hidden rounded-3xl border border-line bg-elev ${
+          photo ? "aspect-[4/5]" : "aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-80"
+        }`}
+      >
         {photo ? (
           <img
             src={photo.src}
@@ -63,18 +68,18 @@ export function Portrait() {
 function PortraitArt() {
   // Points partagés par les deux courbes : départs distincts, arrivée commune
   const dataPoints: [number, number][] = [
-    [40, 330],
-    [110, 300],
-    [170, 318],
-    [230, 236],
-    [300, 150],
+    [40, 208],
+    [120, 190],
+    [200, 200],
+    [280, 140],
+    [370, 62],
   ];
   const devPoints: [number, number][] = [
-    [40, 210],
-    [100, 250],
-    [160, 196],
-    [230, 214],
-    [300, 150],
+    [40, 130],
+    [120, 160],
+    [200, 112],
+    [280, 126],
+    [370, 62],
   ];
   const toPath = (pts: [number, number][]) => pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
 
@@ -83,15 +88,16 @@ function PortraitArt() {
       <div className="bg-grid absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
 
       {/* Monogramme en filigrane */}
-      <span className="text-outline absolute -right-6 top-10 select-none font-display text-[13rem] font-bold leading-none opacity-[0.12]">
+      <span className="text-outline absolute -right-4 top-4 select-none font-display text-[9rem] font-bold leading-none opacity-[0.12] sm:text-[11rem]">
         AD
       </span>
 
-      <svg viewBox="0 0 340 420" className="absolute inset-0 size-full" preserveAspectRatio="xMidYMid meet">
+      {/* Graphique au-dessus de la légende */}
+      <svg viewBox="0 0 400 240" className="absolute inset-x-4 bottom-24 top-12 h-[calc(100%-9rem)] w-[calc(100%-2rem)]" preserveAspectRatio="xMidYMid meet">
         {/* Axes */}
-        <path d="M30 360 H320 M30 360 V90" className="stroke-line-strong" strokeWidth="1" fill="none" />
-        {[90, 150, 210, 270, 330].map((y) => (
-          <path key={y} d={`M26 ${y} H30`} className="stroke-line-strong" strokeWidth="1" />
+        <path d="M24 228 H392 M24 228 V20" className="stroke-line-strong" strokeWidth="1" fill="none" />
+        {[40, 87, 134, 181].map((y) => (
+          <path key={y} d={`M20 ${y} H24`} className="stroke-line-strong" strokeWidth="1" />
         ))}
 
         <path
@@ -122,8 +128,8 @@ function PortraitArt() {
         ))}
 
         {/* Point de convergence */}
-        <circle cx="300" cy="150" r="16" className="fill-signal/15" />
-        <circle cx="300" cy="150" r="7" className="fill-fg" />
+        <circle cx="370" cy="62" r="16" className="fill-signal/15" />
+        <circle cx="370" cy="62" r="7" className="fill-fg" />
       </svg>
     </div>
   );
