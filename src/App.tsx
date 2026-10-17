@@ -5,6 +5,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
 import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
+import { Skills } from "./sections/Skills";
 
 // Les fonctionnalités d'animation sont chargées après le premier rendu
 const loadMotionFeatures = () => import("./lib/motion-features").then((mod) => mod.default);
@@ -25,6 +26,7 @@ function Page() {
       <main id="contenu" tabIndex={-1} className="outline-none">
         <Hero />
         <About />
+        <Skills />
       </main>
       <Cursor />
     </>

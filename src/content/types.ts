@@ -31,7 +31,8 @@ export interface SkillGroup {
   id: "data" | "dev" | "tools";
   title: string;
   description: string;
-  blocks: { label: string; items: string[] }[];
+  /** Sous-catégories : `core` = compétences principales (mises en avant), `items` = complémentaires. */
+  blocks: { label: string; core: string[]; items: string[] }[];
 }
 
 export interface JourneyItem {
@@ -89,6 +90,8 @@ export interface Content {
   skills: {
     title: string;
     lead: string;
+    legend: { core: string; secondary: string };
+    countLabel: (count: number) => string;
     groups: SkillGroup[];
   };
   projects: {

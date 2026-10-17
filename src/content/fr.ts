@@ -103,39 +103,73 @@ export const fr: Content = {
   skills: {
     title: "Compétences",
     lead: "Des outils pour analyser la donnée, et d'autres pour construire les applications qui l'utilisent.",
+    legend: { core: "Principales", secondary: "Complémentaires" },
+    countLabel: (count) => `${count} compétences`,
     groups: [
       {
         id: "data",
         title: "Data & IA",
-        description: "Préparer, explorer, modéliser et visualiser la donnée.",
+        description: "Préparer, explorer, modéliser et visualiser la donnée, jusqu'aux modèles de langage.",
         blocks: [
-          { label: "Langages", items: ["Python", "SQL"] },
           {
-            label: "Analyse",
-            items: ["Pandas", "Nettoyage et préparation", "Analyse exploratoire (EDA)", "Analyse statistique"],
+            label: "Analyse de données",
+            core: ["Pandas", "SQL"],
+            items: ["NumPy", "Analyse exploratoire (EDA)", "Analyse statistique"],
           },
-          { label: "Visualisation", items: ["Power BI", "Matplotlib", "Seaborn"] },
-          { label: "Machine & Deep Learning", items: ["Scikit-learn", "TensorFlow", "Keras"] },
+          { label: "Visualisation", core: ["Power BI"], items: ["Matplotlib", "Seaborn"] },
+          { label: "Machine & Deep Learning", core: ["Scikit-learn", "PyTorch"], items: ["TensorFlow", "Keras"] },
+          {
+            label: "IA générative & API",
+            core: ["LLM", "RAG"],
+            items: ["Intégration d'un LLM par API (Groq)", "Requests (API REST)"],
+          },
         ],
       },
       {
         id: "dev",
         title: "Développement",
-        description: "Concevoir des applications web complètes, du front à la base de données.",
+        description: "Concevoir des applications complètes : interfaces, API, bases de données et logiciels desktop.",
         blocks: [
-          { label: "Langages", items: ["JavaScript", "TypeScript", "PHP", "C#", "Java", "HTML", "CSS"] },
-          { label: "Frameworks", items: ["React", "Angular", "Node.js", "Laravel", "Tailwind CSS"] },
-          { label: "Bases de données", items: ["MySQL", "PostgreSQL", "SQL Server", "MongoDB", "Firebase"] },
+          {
+            label: "Langages",
+            core: ["Python", "JavaScript", "TypeScript", "PHP"],
+            items: ["C#", "Java", "HTML", "CSS"],
+          },
+          {
+            label: "Frontend",
+            core: ["React", "Angular", "Tailwind CSS"],
+            items: ["React Router", "Vite", "Recharts", "Alpine.js", "Bootstrap"],
+          },
+          {
+            label: "Backend & API",
+            core: ["Laravel", "Node.js", "Conception d'API REST"],
+            items: ["Laravel Breeze", "Laravel Sanctum", "JWT", "Swagger / OpenAPI"],
+          },
+          {
+            label: "Applications desktop",
+            core: [],
+            items: ["JavaFX", "Hibernate / JPA", "Lombok", ".NET Framework (WPF)", "Entity Framework", "LiveCharts"],
+          },
+          {
+            label: "Bases de données",
+            core: ["MySQL", "PostgreSQL"],
+            items: ["SQL Server", "MongoDB", "Firebase"],
+          },
+          {
+            label: "Documents & paiement",
+            core: [],
+            items: ["Paiement en ligne (PayDunya)", "Génération de PDF (DomPDF, iTextSharp)", "Génération de QR codes"],
+          },
         ],
       },
       {
         id: "tools",
         title: "Outils",
-        description: "Collaborer, versionner, tester et documenter.",
+        description: "Collaborer, versionner, tester, documenter et déployer.",
         blocks: [
-          { label: "Code & versionnement", items: ["Git", "GitHub", "VS Code", "Jupyter Notebook"] },
-          { label: "API & conception", items: ["Postman", "Figma"] },
-          { label: "Organisation", items: ["Jira", "Taskade"] },
+          { label: "Code & versionnement", core: ["Git", "GitHub"], items: ["VS Code", "Jupyter Notebook"] },
+          { label: "API, design & organisation", core: ["Postman"], items: ["Figma", "Jira", "Taskade"] },
+          { label: "Build, tests & déploiement", core: [], items: ["Maven", "JUnit", "Netlify", "Render"] },
         ],
       },
     ],
