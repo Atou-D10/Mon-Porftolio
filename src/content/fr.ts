@@ -300,7 +300,7 @@ export const fr: Content = {
 
   journey: {
     title: "Parcours",
-    lead: "Formations et expérience professionnelle, de la plus récente à la plus ancienne.",
+    lead: "Entre développement et data : les étapes qui ont construit mon profil.",
     educationTitle: "Formations",
     experienceTitle: "Expérience professionnelle",
     currentLabel: "En cours",
