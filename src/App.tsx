@@ -1,5 +1,6 @@
 import { LazyMotion, MotionConfig } from "framer-motion";
 import { Cursor } from "./components/Cursor";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
@@ -34,6 +35,7 @@ function Page() {
         <Journey />
         <Contact />
       </main>
+      <Footer />
       <Cursor />
     </>
   );
