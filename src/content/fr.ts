@@ -9,7 +9,7 @@ export const fr: Content = {
     lang: "fr",
     title: "Atou Diagne | Data Analyst, Data Scientist et Développeur Fullstack",
     description:
-      "Portfolio d'Atou Diagne, basé à Dakar : Data Analyst et Data Scientist en formation, avec une base solide en développement fullstack. Projets data, machine learning et applications web.",
+      "Portfolio d'Atou Diagne, basé à Dakar : Data Analyst et Data Scientist en formation, avec une base solide en développement fullstack. Projets data, machine learning et applications web.",
   },
 
   nav: {
@@ -50,10 +50,32 @@ export const fr: Content = {
     title: "À propos",
     lead: "Un profil hybride, entre le code et la donnée.",
     paragraphs: [
-      "Data Analyst et Data Scientist en formation, j'ai d'abord construit une base solide en développement logiciel fullstack : sites web, API, bases de données et déploiement.",
-      "En formation continue à l'Orange Digital Center (Intelligence Artificielle) et en Master 2 IA & Data Science à Swiss UMEF University, je développe aujourd'hui mes compétences en traitement, analyse et valorisation des données : nettoyage, analyse exploratoire, machine learning et visualisation.",
-      "Mon objectif : relier ces deux mondes pour concevoir des solutions basées sur la donnée et l'IA, de l'analyse jusqu'à l'application.",
+      "Data Analyst et Data Scientist en formation, j'ai d'abord construit une base solide en développement logiciel fullstack : sites web, API, bases de données et déploiement.",
+      "En formation continue à l'Orange Digital Center (Intelligence Artificielle) et en Master 2 IA & Data Science à Swiss UMEF University, je développe aujourd'hui mes compétences en traitement, analyse et valorisation des données : nettoyage, analyse exploratoire, machine learning et visualisation.",
+      "Mon objectif : relier ces deux mondes pour concevoir des solutions basées sur la donnée et l'IA, de l'analyse jusqu'à l'application.",
     ],
+    tracks: [
+      {
+        id: "fullstack",
+        title: "Développement fullstack",
+        description:
+          "Sites web et applications : interfaces modernes et responsives, API, bases de données, optimisation des performances et déploiement.",
+        tags: ["React", "Angular", "Laravel", "Node.js"],
+      },
+      {
+        id: "data",
+        title: "Data & IA",
+        description:
+          "Traitement et valorisation des données : nettoyage, analyse exploratoire, machine learning et visualisation.",
+        tags: ["Python", "Pandas", "Scikit-learn", "Power BI"],
+      },
+    ],
+    portrait: {
+      figure: "fig. 01 · profil",
+      caption: "Dakar, Sénégal",
+      legendData: "Data / IA",
+      legendDev: "Fullstack",
+    },
     facts: [
       { value: "23 000+", label: "réponses analysées dans mon étude Stack Overflow Survey 2025" },
       { value: "M2", label: "IA & Data Science à Swiss UMEF University, en cours" },
@@ -136,9 +158,9 @@ export const fr: Content = {
         title: "Analyse du marché des développeurs",
         subtitle: "Stack Overflow Developer Survey 2025",
         description:
-          "Analyse de plus de 23 000 réponses pour identifier les facteurs qui influencent le salaire et la satisfaction des développeurs : langage, expérience, mode de travail, études et poste.",
+          "Analyse de plus de 23 000 réponses pour identifier les facteurs qui influencent le salaire et la satisfaction des développeurs : langage, expérience, mode de travail, études et poste.",
         highlights: [
-          "Nettoyage avec Pandas : valeurs manquantes, salaires aberrants, colonnes multi-valeurs",
+          "Nettoyage avec Pandas : valeurs manquantes, salaires aberrants, colonnes multi-valeurs",
           "Analyse exploratoire selon 6 angles, avec vérification de la fiabilité statistique",
           "Dashboard Power BI interactif de 7 pages",
         ],
@@ -166,7 +188,7 @@ export const fr: Content = {
         title: "Prédiction de réussite étudiante",
         subtitle: "Machine learning",
         description:
-          "Modèle de machine learning qui prédit la réussite d'étudiants à partir de données académiques : heures d'étude, présence, absences, devoirs et notes.",
+          "Modèle de machine learning qui prédit la réussite d'étudiants à partir de données académiques : heures d'étude, présence, absences, devoirs et notes.",
         highlights: [
           "Exploration et préparation des données (EDA)",
           "Entraînement d'un modèle de régression logistique",
@@ -196,10 +218,10 @@ export const fr: Content = {
       {
         slug: "vnr-erp",
         category: "fullstack",
-        title: "VNR ERP : gestion des clients",
+        title: "VNR ERP : gestion des clients",
         subtitle: "Test technique de recrutement",
         description:
-          "Module de gestion des clients d'un ERP : API REST sécurisée par JWT et tableau de bord React de type ERP.",
+          "Module de gestion des clients d'un ERP : API REST sécurisée par JWT et tableau de bord React de type ERP.",
         highlights: [
           "Authentification JWT (connexion, déconnexion, rafraîchissement)",
           "CRUD clients avec suppression douce, recherche et pagination",
@@ -214,7 +236,7 @@ export const fr: Content = {
         title: "AI Workspace",
         subtitle: "Plateforme de services d'IA",
         description:
-          "Application web qui simule une plateforme de services d'IA : chat, résumé de texte, traduction et prédiction, connectés à l'API Groq.",
+          "Application web qui simule une plateforme de services d'IA : chat, résumé de texte, traduction et prédiction, connectés à l'API Groq.",
         highlights: [
           "Chat, résumé et traduction via un LLM (API Groq)",
           "Historique local des requêtes, avec recherche et suppression",
@@ -229,7 +251,7 @@ export const fr: Content = {
         title: "Gestion de restaurant",
         subtitle: "Restaurant de sushi",
         description:
-          "Application de gestion d'un restaurant de sushi : commande en ligne, réservation de tables, paiement en ligne et outils pour le gestionnaire.",
+          "Application de gestion d'un restaurant de sushi : commande en ligne, réservation de tables, paiement en ligne et outils pour le gestionnaire.",
         highlights: [
           "Commande et paiement en ligne",
           "Réservation d'une ou plusieurs tables",
@@ -320,7 +342,7 @@ export const fr: Content = {
 
   contact: {
     title: "Contact",
-    lead: "Un projet, un poste ou une collaboration en data ou en développement ? Écrivez-moi, je vous réponds rapidement.",
+    lead: "Un projet, un poste ou une collaboration en data ou en développement ? Écrivez-moi, je vous réponds rapidement.",
     form: {
       name: "Nom",
       email: "Email",

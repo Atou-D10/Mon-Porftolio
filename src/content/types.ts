@@ -75,7 +75,10 @@ export interface Content {
     title: string;
     lead: string;
     paragraphs: string[];
+    /** Les deux facettes du profil hybride. */
+    tracks: { id: "fullstack" | "data"; title: string; description: string; tags: string[] }[];
     facts: { value: string; label: string }[];
+    portrait: { figure: string; caption: string; legendData: string; legendDev: string };
     languagesTitle: string;
     languages: { name: string; level: string }[];
     softSkillsTitle: string;

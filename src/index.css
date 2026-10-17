@@ -229,6 +229,52 @@
   animation: scroll-dot 1.8s var(--ease-out-expo) infinite;
 }
 
+/* Tracé progressif des chemins SVG quand leur bloc [data-reveal] apparaît
+   (les chemins portent pathLength="1"). */
+.js [data-reveal] .draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s var(--ease-out-expo);
+  transition-delay: var(--draw-delay, 300ms);
+}
+
+.js [data-reveal].is-visible .draw {
+  stroke-dashoffset: 0;
+}
+
+/* Bandeau défilant (components/Marquee.tsx) */
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-list {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  @media (width >= 40rem) {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
 /* Transition circulaire lors du changement de thème (View Transitions API) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -249,5 +295,28 @@
   .js [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+
+  .js [data-reveal] .draw {
+    stroke-dashoffset: 0;
+  }
+
+  /* Le bandeau devient une liste statique */
+  .marquee {
+    mask-image: none;
+  }
+  .marquee-track {
+    display: block;
+    width: auto;
+    animation: none;
+  }
+  .marquee-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+  .marquee-dup {
+    display: none;
   }
 }

@@ -3,6 +3,7 @@ import { Cursor } from "./components/Cursor";
 import { Header } from "./components/Header";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
+import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
 
 // Les fonctionnalités d'animation sont chargées après le premier rendu
@@ -23,6 +24,7 @@ function Page() {
       <Header />
       <main id="contenu" tabIndex={-1} className="outline-none">
         <Hero />
+        <About />
       </main>
       <Cursor />
     </>
