@@ -40,14 +40,24 @@ export interface SkillGroup {
   blocks: { label: string; core: string[]; items: string[] }[];
 }
 
-export interface JourneyItem {
-  type: "experience" | "education";
+export interface EducationItem {
+  title: string;
+  org: string;
+  /** Période affichée dans la colonne de dates de la timeline. */
+  period: string;
+  /** Formation en cours : badge « En cours » et point pulsé. */
+  current?: boolean;
+  /** Mention obtenue (badge discret à côté de l'établissement). */
+  mention?: string;
+  /** Sous-éléments d'une entrée groupée (ex. certificats d'un même organisme). */
+  items?: { title: string; period: string }[];
+}
+
+export interface ExperienceItem {
   title: string;
   org: string;
   period: string;
-  current?: boolean;
-  note?: string;
-  details?: string[];
+  missions: string[];
 }
 
 export interface Content {
@@ -114,9 +124,11 @@ export interface Content {
   journey: {
     title: string;
     lead: string;
-    typeLabels: Record<JourneyItem["type"], string>;
+    educationTitle: string;
+    experienceTitle: string;
     currentLabel: string;
-    items: JourneyItem[];
+    education: EducationItem[];
+    experience: ExperienceItem[];
   };
   contact: {
     title: string;

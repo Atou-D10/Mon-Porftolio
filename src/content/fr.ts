@@ -301,60 +301,56 @@ export const fr: Content = {
   journey: {
     title: "Parcours",
     lead: "Formations et expérience professionnelle, de la plus récente à la plus ancienne.",
-    typeLabels: { experience: "Expérience", education: "Formation" },
+    educationTitle: "Formations",
+    experienceTitle: "Expérience professionnelle",
     currentLabel: "En cours",
-    items: [
+    // Ordre : de la plus récente à la plus ancienne (source : CV)
+    education: [
       {
-        type: "education",
         title: "Formation en Intelligence Artificielle",
         org: "Orange Digital Center, Dakar",
-        period: "Juillet 2026 à aujourd'hui",
+        period: "Juillet 2026 – présent",
         current: true,
       },
       {
-        type: "experience",
+        title: "Master 2 IA et Data Science",
+        org: "Swiss UMEF University, Dakar",
+        period: "2025 – présent",
+        current: true,
+      },
+      {
+        title: "Certificats FORCE-N",
+        org: "FORCE-N",
+        period: "2025",
+        items: [
+          { title: "Certificat en Informatique et Internet", period: "février – mars 2025" },
+          { title: "Certificat en développement Front-End", period: "mai – septembre 2025" },
+        ],
+      },
+      {
+        title: "Licence Informatique, Développement d'application",
+        org: "Université Numérique Cheikh Hamidou Kane (UNCHK)",
+        period: "2022 – 2025",
+      },
+      {
+        title: "Licence Informatique appliquée à la gestion des entreprises",
+        org: "Institut Supérieur d'Informatique (ISI)",
+        period: "2021 – 2024",
+        mention: "Mention Très Bien",
+      },
+    ],
+    experience: [
+      {
         title: "Développeur Full Stack",
         org: "Keops Technologies",
-        period: "Août à octobre 2025",
-        details: [
+        period: "Août – octobre 2025",
+        missions: [
           "Développement et maintenance de sites web pour l'entreprise et ses clients",
           "Optimisation des fonctionnalités et amélioration des performances applicatives",
           "Gestion de la base de données et participation au déploiement",
           "Intégration d'interfaces web modernes et responsives",
           "Participation ponctuelle à l'analyse de données internes pour soutenir l'optimisation de fonctionnalités",
         ],
-      },
-      {
-        type: "education",
-        title: "Master 2 IA et Data Science",
-        org: "Swiss UMEF University, Dakar",
-        period: "2025 à aujourd'hui",
-        current: true,
-      },
-      {
-        type: "education",
-        title: "Certificat en développement Front-End",
-        org: "FORCE-N",
-        period: "Mai à septembre 2025",
-      },
-      {
-        type: "education",
-        title: "Certificat en Informatique et Internet",
-        org: "FORCE-N",
-        period: "Février à mars 2025",
-      },
-      {
-        type: "education",
-        title: "Licence Informatique, Développement d'application",
-        org: "Université Numérique Cheikh Hamidou Kane (UNCHK)",
-        period: "2022 à 2025",
-      },
-      {
-        type: "education",
-        title: "Licence Informatique appliquée à la gestion des entreprises",
-        org: "Institut Supérieur d'Informatique (ISI)",
-        period: "2021 à 2024",
-        note: "Mention Très Bien",
       },
     ],
   },

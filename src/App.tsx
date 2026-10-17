@@ -5,6 +5,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
 import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
+import { Journey } from "./sections/Journey";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 
@@ -29,6 +30,7 @@ function Page() {
         <About />
         <Skills />
         <Projects />
+        <Journey />
       </main>
       <Cursor />
     </>
