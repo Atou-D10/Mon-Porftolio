@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atou-diagne-portfolio.netlify.app/sitemap.xml
