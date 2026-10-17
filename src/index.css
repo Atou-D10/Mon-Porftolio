@@ -20,6 +20,7 @@
   --signal: #ff8a3d; /* accent « développement » et actions */
   --data: #3dd9c1; /* accent « data / IA » */
   --on-accent: #14161b;
+  --danger: #ff7a7a; /* erreurs de formulaire */
   --glow: rgb(255 138 61 / 0.18);
   color-scheme: dark;
 }
@@ -35,6 +36,7 @@
   --signal: #c2541a;
   --data: #0f7c6e;
   --on-accent: #ffffff;
+  --danger: #b42318;
   --glow: rgb(194 84 26 / 0.14);
   color-scheme: light;
 }
@@ -50,6 +52,7 @@
   --color-signal: var(--signal);
   --color-data: var(--data);
   --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
 
   --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;

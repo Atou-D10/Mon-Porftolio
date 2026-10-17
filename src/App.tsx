@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
 import { About } from "./sections/About";
+import { Contact } from "./sections/Contact";
 import { Hero } from "./sections/Hero";
 import { Journey } from "./sections/Journey";
 import { Projects } from "./sections/Projects";
@@ -31,6 +32,7 @@ function Page() {
         <Skills />
         <Projects />
         <Journey />
+        <Contact />
       </main>
       <Cursor />
     </>

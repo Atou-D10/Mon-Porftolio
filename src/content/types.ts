@@ -133,22 +133,35 @@ export interface Content {
   contact: {
     title: string;
     lead: string;
+    /** Accroche affichée en grand dans la colonne des coordonnées. */
+    pitch: string;
     form: {
+      label: string;
       name: string;
       email: string;
       message: string;
+      required: string;
       submit: string;
       sending: string;
-      success: string;
-      error: string;
+      successTitle: string;
+      successText: string;
+      sendAnother: string;
+      /** Message d'erreur : texte, puis lien vers l'e-mail, puis fin de phrase. */
+      errorBefore: string;
+      errorLink: string;
+      errorAfter: string;
+      errors: { name: string; email: string; emailInvalid: string; message: string };
       honeypot: string;
     };
     channelsTitle: string;
-    labels: { email: string; phone: string; location: string; github: string; linkedin: string };
+    labels: { email: string; github: string; linkedin: string; location: string };
+    copy: { idle: string; done: string; aria: string; announce: string };
+    openInNewTab: string;
     location: string;
   };
   footer: {
     tagline: string;
+    navLabel: string;
     rights: string;
     backToTop: string;
     built: string;
