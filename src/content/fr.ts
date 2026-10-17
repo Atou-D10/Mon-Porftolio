@@ -234,8 +234,7 @@ export const fr: Content = {
         title: "AI Workspace",
         subtitle: "Plateforme de services d'IA",
         description:
-          "Application web sans framework qui simule une plateforme de services d'IA. Le chat, le résumé de texte et la traduction sont connectés à un LLM via l'API Groq.",
-        note: "Le module « prédiction » est une simulation générée par le LLM, et le tableau de bord est une démonstration visuelle.",
+          "Prototype d'une plateforme de services d'IA, développé sans framework. Le chat, le résumé de texte et la traduction sont connectés à un LLM via l'API Groq, avec un historique des requêtes enregistré localement, consultable et supprimable.",
         highlights: [
           "Chat, résumé et traduction via l'API Groq",
           "Historique local des requêtes, avec recherche et suppression",
@@ -262,7 +261,7 @@ export const fr: Content = {
         subtitle: "Machine learning",
         description:
           "Régression logistique qui prédit la réussite d'un étudiant à partir des heures d'étude, de la présence, des absences, des devoirs et de la note de contrôle, avec analyse exploratoire, évaluation du modèle et visualisation des résultats.",
-        note: "Les données sont simulées, générées par un script Python du projet.",
+        note: "Jeu de données généré pour l'exercice.",
         stack: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"],
         repos: [{ label: "Code", url: "https://github.com/Atou-D10/projet_ml_etudiant" }],
       },

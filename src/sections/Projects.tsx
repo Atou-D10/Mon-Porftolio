@@ -1,5 +1,5 @@
 import { AnimatePresence, m } from "framer-motion";
-import { ArrowUpRight, Info } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import { GitHubIcon } from "../components/BrandIcons";
 import { ProjectCover } from "../components/ProjectCover";
@@ -255,14 +255,12 @@ function StackList({ stack }: { stack: string[] }) {
   );
 }
 
+/** Précision factuelle, présentée sobrement : une ligne de texte discrète. */
 function Note({ text, label }: { text: string; label: string }) {
   return (
-    <p className="flex gap-2 rounded-xl border border-dashed border-line-strong px-3 py-2 text-xs text-muted">
-      <Info size={14} aria-hidden="true" className="mt-px shrink-0" />
-      <span>
-        <span className="sr-only">{label} : </span>
-        {text}
-      </span>
+    <p className="text-xs italic text-muted">
+      <span className="sr-only">{label} : </span>
+      {text}
     </p>
   );
 }
