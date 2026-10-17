@@ -73,7 +73,8 @@ export interface Content {
     theme: string;
     openMenu: string;
     closeMenu: string;
-    home: string;
+    /** Complément lu après le nom sur le lien du logo. */
+    homeSuffix: string;
   };
   hero: {
     location: string;

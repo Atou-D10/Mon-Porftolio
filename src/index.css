@@ -182,7 +182,6 @@
   from {
     opacity: 0;
     transform: translate3d(0, 0.5em, 0) rotate(4deg);
-    filter: blur(8px);
   }
 }
 

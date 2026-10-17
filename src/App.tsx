@@ -1,4 +1,5 @@
 import { LazyMotion, MotionConfig } from "framer-motion";
+import { Suspense } from "react";
 import { Cursor } from "./components/Cursor";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -28,14 +29,30 @@ function Page() {
       <ScrollProgress />
       <Header />
       <main id="contenu" tabIndex={-1} className="outline-none">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Journey />
-        <Contact />
+        {/* Une frontière Suspense par section : React hydrate chaque bloc séparément
+            et rend la main au navigateur entre deux (pas de tâche longue). */}
+        <Suspense fallback={null}>
+          <Hero />
+        </Suspense>
+        <Suspense fallback={null}>
+          <About />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Skills />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Projects />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Journey />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <Cursor />
     </>
   );

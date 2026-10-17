@@ -20,9 +20,11 @@ const categoryDot: Record<ProjectCategory, string> = {
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-/** Animation d'entrée / sortie des cartes au changement de filtre. */
+/**
+ * Animation d'entrée / sortie des cartes au changement de filtre.
+ * Fondu simple, sans animation de « layout » : moins coûteux (pas de mesure de toute la page).
+ */
 const itemMotion = {
-  layout: true,
   initial: { opacity: 0, y: 16, scale: 0.98 },
   animate: { opacity: 1, y: 0, scale: 1 },
   exit: { opacity: 0, scale: 0.98 },
@@ -73,18 +75,11 @@ export function Projects() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setFilter(f.id)}
-                  className={`relative rounded-xl px-3 py-2.5 text-sm font-medium transition-colors sm:rounded-full sm:px-5 sm:py-2 ${
-                    active ? "text-bg" : "text-muted hover:text-fg"
+                  className={`rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-300 sm:rounded-full sm:px-5 sm:py-2 ${
+                    active ? "bg-fg text-bg" : "text-muted hover:text-fg"
                   }`}
                 >
-                  {active && (
-                    <m.span
-                      layoutId="project-filter"
-                      className="absolute inset-0 rounded-xl bg-fg sm:rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative">{f.label}</span>
+                  {f.label}
                 </button>
               );
             })}

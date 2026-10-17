@@ -10,10 +10,9 @@ export function Monogram({ className = "" }: { className?: string }) {
   return (
     <span
       aria-hidden="true"
-      className={`grid size-9 place-items-center rounded-lg bg-fg font-display text-sm font-bold tracking-tight text-bg ${className}`}
-    >
-      AD
-    </span>
+      data-text="AD"
+      className={`grid size-9 place-items-center rounded-lg bg-fg font-display text-sm font-bold tracking-tight text-bg before:content-[attr(data-text)] ${className}`}
+    />
   );
 }
 
@@ -65,31 +64,25 @@ export function Header() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <a href="#accueil" aria-label={t.nav.home} className="flex items-center gap-3 rounded-lg">
+        <a href="#accueil" className="flex items-center gap-3 rounded-lg">
           <Monogram />
-          <span className="hidden font-display text-base font-semibold tracking-tight sm:inline">
+          <span className="sr-only font-display text-base font-semibold tracking-tight sm:not-sr-only">
             {profile.firstName} {profile.lastName}
           </span>
+          <span className="sr-only">{t.nav.homeSuffix}</span>
         </a>
 
         <nav aria-label="Navigation principale" className="hidden md:block">
-          <ul className="flex items-center gap-1 rounded-full border border-line bg-elev/50 p-1 backdrop-blur">
+          <ul className="flex items-center gap-1 rounded-full border border-line bg-elev/80 p-1">
             {t.nav.links.map((link) => {
               const isActive = active === link.id;
               return (
-                <li key={link.id} className="relative">
-                  {isActive && (
-                    <m.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-soft"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  )}
+                <li key={link.id}>
                   <a
                     href={`#${link.id}`}
                     aria-current={isActive ? "true" : undefined}
-                    className={`relative block rounded-full px-4 py-1.5 text-sm transition-colors ${
-                      isActive ? "text-fg" : "text-muted hover:text-fg"
+                    className={`block rounded-full px-4 py-1.5 text-sm transition-colors duration-300 ${
+                      isActive ? "bg-soft text-fg" : "text-muted hover:text-fg"
                     }`}
                   >
                     {link.label}

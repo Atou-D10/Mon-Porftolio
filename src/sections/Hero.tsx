@@ -33,9 +33,9 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute -right-40 -top-20 -z-20 size-[36rem] rounded-full bg-signal/15 blur-[120px] dark:bg-signal/10"
+        className="absolute -right-56 -top-40 -z-20 size-[52rem] bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--signal)_14%,transparent),transparent)]"
       />
-      <div aria-hidden="true" className="absolute -bottom-40 left-1/4 -z-20 size-[30rem] rounded-full bg-data/10 blur-[120px]" />
+      <div aria-hidden="true" className="absolute -bottom-56 left-1/4 -z-20 size-[44rem] bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--data)_10%,transparent),transparent)]" />
       <DataField className="absolute inset-0 -z-10 size-full opacity-60 [mask-image:linear-gradient(to_right,transparent_5%,black_55%)] sm:opacity-100" />
 
       <div className="container-page flex flex-1 flex-col justify-center py-14">
@@ -104,7 +104,7 @@ export function Hero() {
       </div>
 
       {/* Bandeau « en ce moment » */}
-      <div className="fade-up border-t border-line bg-bg/40 backdrop-blur-sm" style={delay(1000)}>
+      <div className="fade-up border-t border-line bg-bg/70" style={delay(1000)}>
         <div className="container-page grid gap-4 py-5 sm:grid-cols-3 sm:gap-8">
           {t.hero.now.map((item) => (
             <div key={item.label} className="flex flex-col gap-1">

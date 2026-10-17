@@ -30,9 +30,21 @@ if (!template.includes("<!--app-html-->")) {
   throw new Error("Marqueur <!--app-html--> introuvable dans dist/index.html");
 }
 
-const html = template.replace("<!--app-html-->", appHtml).replace("<!--preload-fonts-->", preloadFonts);
+// CSS intégrée dans le HTML : supprime une requête bloquante avant le premier affichage.
+// (Les URL des polices sont absolues, /assets/…, elles restent valides.)
+let inlinedCss = false;
+let html = template.replace("<!--app-html-->", appHtml).replace("<!--preload-fonts-->", preloadFonts);
+html = await (async () => {
+  const match = html.match(/<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/);
+  if (!match) return html;
+  const css = await readFile(path.join(dist, match[1]), "utf8");
+  inlinedCss = true;
+  return html.replace(match[0], () => `<style>${css}</style>`);
+})();
 
 await writeFile(indexPath, html);
 await rm(ssrDir, { recursive: true, force: true });
 
-console.log(`Prérendu OK : ${(html.length / 1024).toFixed(1)} kB, ${preloadFonts ? "polices préchargées" : "aucune police à précharger"}`);
+console.log(
+  `Prérendu OK : ${(html.length / 1024).toFixed(1)} kB, ${preloadFonts ? "polices préchargées" : "aucune police à précharger"}, CSS ${inlinedCss ? "intégrée" : "externe"}`,
+);

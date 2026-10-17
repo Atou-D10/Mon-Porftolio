@@ -25,7 +25,7 @@ export const fr: Content = {
     theme: "Basculer entre thème clair et sombre",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
-    home: "Atou Diagne, retour à l'accueil",
+    homeSuffix: ", retour à l'accueil",
   },
 
   hero: {

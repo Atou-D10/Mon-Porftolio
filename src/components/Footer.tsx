@@ -19,11 +19,12 @@ export function Footer() {
       <div className="container-page grid gap-10 py-12 md:grid-cols-12 md:py-16">
         {/* Identité */}
         <div className="md:col-span-5">
-          <a href="#accueil" aria-label={t.nav.home} className="inline-flex items-center gap-3 rounded-lg">
+          <a href="#accueil" className="inline-flex items-center gap-3 rounded-lg">
             <Monogram />
             <span className="font-display text-lg font-semibold">
               {profile.firstName} {profile.lastName}
             </span>
+            <span className="sr-only">{t.nav.homeSuffix}</span>
           </a>
           <p className="mt-4 max-w-sm text-sm text-muted">{t.footer.tagline}</p>
         </div>
