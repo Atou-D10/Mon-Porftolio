@@ -56,9 +56,12 @@ export function Portrait() {
           </div>
         </figcaption>
 
-        <p aria-hidden="true" className="absolute left-6 top-6 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-          {portrait.figure}
-        </p>
+        {/* Étiquette de figure : uniquement sur l'illustration, illisible sur une photo */}
+        {!photo && (
+          <p aria-hidden="true" className="absolute left-6 top-6 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+            {portrait.figure}
+          </p>
+        )}
       </figure>
     </TiltCard>
   );
