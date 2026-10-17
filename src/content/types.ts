@@ -8,23 +8,28 @@ export type Locale = "fr" | "en";
 
 export type SectionId = "accueil" | "a-propos" | "competences" | "projets" | "parcours" | "contact";
 
-export type ProjectCategory = "data" | "fullstack";
+export type ProjectCategory = "data" | "web" | "desktop";
 
-export interface ProjectLink {
-  kind: "code" | "demo";
-  label: string;
-  url: string;
-}
+/** Visuel généré affiché sur les cartes des projets phares (aucune photo). */
+export type ProjectCover = "survey" | "realestate" | "ai";
 
 export interface Project {
   slug: string;
-  category: ProjectCategory;
+  /** Un projet peut apparaître dans plusieurs filtres (ex. AI Workspace : data + web). */
+  categories: ProjectCategory[];
+  /** Projet phare : grande carte avec visuel. Sinon, ligne compacte. */
+  featured?: { cover: ProjectCover };
   title: string;
   subtitle?: string;
   description: string;
-  highlights: string[];
+  /** Précision factuelle affichée à part (données simulées, module de démonstration…). */
+  note?: string;
+  highlights?: string[];
   stack: string[];
-  links: ProjectLink[];
+  /** Dépôts GitHub : un ou plusieurs (ex. front et API). */
+  repos: { label: string; url: string }[];
+  /** Lien de démo en ligne : le bouton n'apparaît que si ce champ est renseigné. */
+  demo?: string;
 }
 
 export interface SkillGroup {
@@ -97,8 +102,13 @@ export interface Content {
     title: string;
     lead: string;
     filters: { id: "all" | ProjectCategory; label: string }[];
+    filterLabel: string;
     categoryLabels: Record<ProjectCategory, string>;
     resultsLabel: (count: number) => string;
+    repoLinkLabel: (project: string, repo: string) => string;
+    demoLabel: string;
+    demoLinkLabel: (project: string) => string;
+    noteLabel: string;
     items: Project[];
   };
   journey: {

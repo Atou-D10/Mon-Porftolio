@@ -39,11 +39,16 @@ export function useActiveSection(ids: string[]) {
     const elements = ids.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => !!el);
     if (!elements.length) return;
 
+    // État de chaque section : on recalcule la section active à partir de l'ensemble,
+    // et pas seulement de la dernière entrée (sinon un décalage de mise en page
+    // pouvait laisser le menu bloqué sur la section précédente).
+    const visible = new Map<string, boolean>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
+        entries.forEach((entry) => visible.set(entry.target.id, entry.isIntersecting));
+        const current = ids.find((id) => visible.get(id));
+        if (current) setActive(current);
       },
       // Une section est « active » quand elle traverse le milieu de l'écran
       { rootMargin: "-45% 0px -50% 0px" },

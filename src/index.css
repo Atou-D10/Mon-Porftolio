@@ -242,6 +242,25 @@
   stroke-dashoffset: 0;
 }
 
+/* Indicateur de saisie du visuel « AI Workspace » (components/ProjectCover.tsx) */
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.typing-dot {
+  transform-box: fill-box;
+  animation: typing 1.4s ease-in-out infinite;
+}
+
 /* Bandeau défilant (components/Marquee.tsx) */
 @keyframes marquee {
   to {

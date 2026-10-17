@@ -5,6 +5,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 import { ContentProvider, useContent } from "./content";
 import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
+import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 
 // Les fonctionnalités d'animation sont chargées après le premier rendu
@@ -27,6 +28,7 @@ function Page() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
       </main>
       <Cursor />
     </>
