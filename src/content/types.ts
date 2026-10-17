@@ -68,6 +68,8 @@ export interface Content {
   };
   nav: {
     skip: string;
+    mainLabel: string;
+    mobileLabel: string;
     links: { id: SectionId; label: string }[];
     cv: string;
     theme: string;
@@ -114,6 +116,7 @@ export interface Content {
     lead: string;
     filters: { id: "all" | ProjectCategory; label: string }[];
     filterLabel: string;
+    stackLabel: string;
     categoryLabels: Record<ProjectCategory, string>;
     resultsLabel: (count: number) => string;
     repoLinkLabel: (project: string, repo: string) => string;

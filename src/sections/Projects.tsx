@@ -186,7 +186,7 @@ function FeaturedCard({
           {project.note && <Note text={project.note} label={content.noteLabel} />}
 
           <div className="mt-auto flex flex-col gap-5 pt-2">
-            <StackList stack={project.stack} />
+            <StackList stack={project.stack} label={content.stackLabel} />
             <ProjectLinks project={project} content={content} />
           </div>
         </div>
@@ -216,7 +216,7 @@ function ProjectRow({ project, content }: { project: Project; content: ProjectsC
         {project.note && <Note text={project.note} label={content.noteLabel} />}
       </div>
 
-      <StackList stack={project.stack} />
+      <StackList stack={project.stack} label={content.stackLabel} />
 
       <ProjectLinks project={project} content={content} />
     </article>
@@ -238,9 +238,9 @@ function CategoryTags({ categories, labels }: { categories: ProjectCategory[]; l
   );
 }
 
-function StackList({ stack }: { stack: string[] }) {
+function StackList({ stack, label }: { stack: string[]; label: string }) {
   return (
-    <ul aria-label="Technologies" className="flex flex-wrap gap-1.5">
+    <ul aria-label={label} className="flex flex-wrap gap-1.5">
       {stack.map((tech) => (
         <li key={tech} className="rounded-full border border-line px-2.5 py-1 font-mono text-[0.7rem] text-muted">
           {tech}

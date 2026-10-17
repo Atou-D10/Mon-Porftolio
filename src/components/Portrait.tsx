@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useContent } from "../content";
+import { profile, useContent } from "../content";
 import { TiltCard } from "./TiltCard";
 
 /**
@@ -41,7 +41,9 @@ export function Portrait() {
         {/* Légende commune, façon figure de rapport */}
         <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-elev via-elev/80 to-transparent p-6 pt-16">
           <div>
-            <p className="font-display text-2xl font-semibold leading-tight">Atou Diagne</p>
+            <p className="font-display text-2xl font-semibold leading-tight">
+              {profile.firstName} {profile.lastName}
+            </p>
             <p className="mt-1 font-mono text-xs text-muted">{portrait.caption}</p>
           </div>
           <div aria-hidden="true" className="flex flex-col items-end gap-1.5 font-mono text-[0.7rem] text-muted">

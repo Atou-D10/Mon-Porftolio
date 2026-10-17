@@ -14,6 +14,8 @@ export const fr: Content = {
 
   nav: {
     skip: "Aller au contenu",
+    mainLabel: "Navigation principale",
+    mobileLabel: "Navigation mobile",
     links: [
       { id: "a-propos", label: "À propos" },
       { id: "competences", label: "Compétences" },
@@ -184,6 +186,7 @@ export const fr: Content = {
       { id: "desktop", label: "Desktop" },
     ],
     filterLabel: "Filtrer les projets par catégorie",
+    stackLabel: "Technologies utilisées",
     categoryLabels: { data: "Data & IA", web: "Fullstack web", desktop: "Desktop" },
     resultsLabel: (count) => `${count} projet${count > 1 ? "s" : ""} affiché${count > 1 ? "s" : ""}`,
     repoLinkLabel: (project, repo) => `${project} : code ${repo === "Code" ? "" : `(${repo}) `}sur GitHub, nouvel onglet`,

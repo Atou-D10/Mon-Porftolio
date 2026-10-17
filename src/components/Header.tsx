@@ -72,7 +72,7 @@ export function Header() {
           <span className="sr-only">{t.nav.homeSuffix}</span>
         </a>
 
-        <nav aria-label="Navigation principale" className="hidden md:block">
+        <nav aria-label={t.nav.mainLabel} className="hidden md:block">
           <ul className="flex items-center gap-1 rounded-full border border-line bg-elev/80 p-1">
             {t.nav.links.map((link) => {
               const isActive = active === link.id;
@@ -122,7 +122,7 @@ export function Header() {
         {open && (
           <m.nav
             id="mobile-menu"
-            aria-label="Navigation mobile"
+            aria-label={t.nav.mobileLabel}
             className="fixed inset-x-0 top-16 bottom-0 bg-bg md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
